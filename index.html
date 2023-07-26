@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+  </head>
+  <body>
+    <form class="payment-form">
+      <h4 style="font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; font-weight: 100; font-size: medium;color: lavender;">Make Payment</h4>
+      <div class="form-group">
+        <label>Name:</label>
+        <input type="text" name="name" required />
+      </div>
+      <div class="form-group">
+        <label>Email:</label>
+        <input type="email" name="email" required />
+      </div>
+      <div class="form-group">
+        <label>Amount:</label>
+        <input type="number" name="amount" required />
+      </div>
+
+      <div class="payment-methods">
+        <label>Payment Method:</label>
+        <div class="method-item">
+          <input type="radio" name="payment_method" value="UPI" required onclick="toggleUPIField(true)" />
+          <img src="./assets/upi.svg" alt="UPI" />
+        </div>
+        <div class="method-item">
+          <input type="radio" name="payment_method" value="Card" required onclick="toggleUPIField(false)" />
+          <img src="./assets/card.png" alt="Card" />
+        </div>
+        <div class="method-item">
+          <input type="radio" name="payment_method" value="Netbanking" required onclick="toggleUPIField(false)" />
+          <img src="./assets/net.png" alt="Netbanking" />
+        </div>
+      </div>
+
+      <div class="form-group upi-group" style="display: none;">
+        <label>UPI ID:</label>
+        <input type="text" name="upi_id" />
+      </div>
+
+      <button type="button" class="btn-submit" onclick="handlePayment()">Pay</button>
+    </form>
+    <script src="script.js"></script>
+  </body>
+</html>
