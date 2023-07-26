@@ -1,7 +1,7 @@
 function toggleUPIField(show) {
     const upiGroup = document.querySelector(".upi-group");
     if (show) {
-      upiGroup.style.display = "block";
+      upiGroup.style.display = "block"; //show upi id input only if user selects upi
     } else {
       upiGroup.style.display = "none";
     }
